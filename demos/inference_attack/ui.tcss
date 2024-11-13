@@ -1,0 +1,30 @@
+Screen {
+  layout: grid;
+  grid-size: 2 2;
+  grid-columns: 2fr 1fr; 
+  grid-rows: 25% 75%;
+} 
+
+#two {
+  row-span: 2;
+}
+
+.box {
+  content-align: center middle;
+  height: 100%;
+  border: tall snow;
+}
+
+.empty {
+  height: 100%;
+}
+
+Select {
+  height: 100%;
+}
+
+CommandHistory {
+  border: tall snow;
+}
+
+

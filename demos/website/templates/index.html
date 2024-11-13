@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dartmouth SPLICE Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+</head>
+<body>
+    <div id="layout">
+        <div id="buttons-column">
+            <ul id="sortable">
+                <li class="ui-state-default button-1" data-id="Button 1">Get Router Info</li>
+                <li class="ui-state-default button-2" data-id="Button 2">Find Channel</li>
+                <li class="ui-state-default button-3" data-id="Button 3">Get Devices</li>
+                <li class="ui-state-default button-4" data-id="Button 4">Deauthentication Attack</li>
+            </ul>
+        </div>
+        <div id="content-column" style="display: none;">
+            <div id="message">Scanned Information</div>
+            <select id="dynamic-dropdown">
+            </select>
+        </div>
+    </div>
+    <button onclick="executeOrder()">Execute</button>
+    <button id="clear-terminal">Clear</button>
+    <div id="terminal" style="background-color: black; color: white; padding: 10px; height: 600px; overflow-y: auto; font-family: monospace;">
+        <!-- terminal output -->
+    </div>
+    <script src="{{ url_for('static', filename='scripts.js') }}" type="module"></script>
+</body>
+</html>

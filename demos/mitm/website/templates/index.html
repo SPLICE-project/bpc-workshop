@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Temperature Display</title>
+    <script>
+        window.onload = function() {
+            const source = new EventSource('/temperature_stream');
+            source.onmessage = function(event) {
+                const data = JSON.parse(event.data);
+                document.getElementById('tempC').innerText = data.C + '°C';
+                document.getElementById('tempF').innerText = data.F + '°F';
+            };
+        }
+    </script>
+</head>
+<body>
+    <h1>Latest Temperature Readings</h1>
+    <p>Temperature in Celsius: <span id="tempC">N/A</span></p>
+    <p>Temperature in Fahrenheit: <span id="tempF">N/A</span></p>
+</body>
+</html>
+
